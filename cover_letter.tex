@@ -1,22 +1,66 @@
-% cover_letter.tex – plantilla de carta de presentación
-\section*{Cover Letter}
+\documentclass[11pt,letterpaper]{letter}  % Fuente 11pt, papel carta
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\geometry{left=1in, right=1in, top=1in, bottom=1in}  % Márgenes de 1 pulgada
+\usepackage{setspace}
+\onehalfspacing  % Interlineado 1.5
+\usepackage[colorlinks=true,urlcolor=blue,linkcolor=black]{hyperref}
 
-[Nombre]
-[Dirección]
-[Ciudad, Estado ZIP]
-[Correo electrónico] \\[Teléfono]
+% ========== REMITENTE ==========
+\name{Ángel Luis Robles Fernández}
+\address{5125 Overland Dr. B8, 66049\\
+Lawrence, KS\\
++1 480 791 4846\\
+a.l.robles.fernandez@gmail.com\\
+\url{https://alrobles.github.io/}}
+\signature{Ángel Luis Robles Fernández\\
+}
 
-[Fecha]
+% ========== FECHA ==========
+\date{September 1 2026}
 
-Search Committee
-Department of Integrative Biology
-Oregon State University
-Corvallis, OR 97331
+\begin{document}
 
-Estimado Comité de Búsqueda:
+\begin{letter}{
+Search Committee for Assistant Professor of Biology\\
+Department of Biology\\
+Univesrity ...\\
+0000 Fake Rd\\
+Fake Towns, XX 0000
+}
 
-Me dirijo a ustedes para expresar mi gran interés en el puesto de Assistant Professor en Integrative Biology (ref. JR0000039).  ... (continúe con su motivación, contribuciones de investigación, experiencia docente, y ajuste con la visión del departamento).
+\opening{Dear Members of the Biology Search Committee,}
 
-Atentamente,
+% ========== PRESENTACIÓN ==========
+In this letter, I express my interest in the selection process for a tenure-track assistant professor position  at ???. My research proposal for this application focuses on global change biology; however, my research is broad, and I have worked with multiple systems throughout my career.
 
-[Nombre]
+I completed my Ph.D. in Evolutionary Biology at Arizona State University and defended my dissertation in July 2025. The primary objective of my doctoral research was the development and implementation of new methodologies for both modeling parasite-host interactions and quantifying host susceptibility in the wild to potential, unobserved parasites. My research is based on a powerful intersection of machine learning, high-performance computing, and ecological modeling. I am currently a postdoctoral researcher at the Kansas Biological Survey at the University of Kansas, under the supervision of Dr. Daniel Reuman, where I develop species distribution algorithms based on demographic models.
+
+My research aligns closely with the needs of the Department of Biology at ??????  University. After two years as a Senior Data Analyst in the steel industry, where I developed machine learning models to optimize industrial processes, I returned to academia, where I applied my quantitative skills to ecological issues of global importance. That decision led me to pursue a master's degree in physics and, subsequently, a Ph.D. in evolutionary biology, where I modeled host-pathogen interactions at continental and global scales. I later expanded my line of research in my current postdoctoral position, incorporating both theoretical developments and high-performance computing into my current project. Each stage contributed to the development of the set of mathematical and computational tools that I now use in my research on problems in disease ecology, as well as in biogeography and evolutionary biology.
+
+As a computational ecologist, my research is based entirely on publicly available data—primarily data from GBIF, GenBank and climate information, as well as on the open-source, accessible, and replicable code I have developed throughout my research career.
+
+The University of ????? provides an excelent environment for continuing my research, as it offers me the opportunity to share my skills and knowledge with the institution’s students, creating a productive cycle between my scientific workflow and my teaching practice. As an RStudio-certified Tidyverse trainer, I can teach students the tools and skills they need to participate in my research. My scientific approach is based on tools such as machine learning, artificial intelligence, scientific programming, and computational statistics. I will also encourage students to competitively explore the job market and provide them with guidance based on my industry experience.
+
+
+My teaching experience at the higher education level includes my position as a teaching assistant for the courses "Quantitative Ecology" and "Statistical Models for Biology" at Arizona State University. In addition, I have been invited to teach the Advanced Course on Ecological Niche Modeling at INECOL A.C., a graduate-level course for the third consecutive year. 
+
+I am particularly interested in teaching a course on Global Change Ecology that uses real data from my ongoing research projects, providing students with practical experience with the computational tools necessary in modern ecology. I also believe it is important to participate in the introductory biology course sequence (Name of introductory course at the University) because working with first-year undergraduates provides them the building blocks in the concepts underpinning advanced courses. My teaching philosophy is based on hands-on courses in which ecology is approached as a quantitative, data-driven science.
+
+I am looking for a permanent home. My family and I want a place to put down roots, and (city name) offers an appealing combination of an academic community, proximity to (nearby major city), and quality of life—exactly what we are looking for. I am not looking for just a stepping stone; I am looking for a department where I can build a research group focused on students’ long-term development, contribute to curriculum development, and become a committed researcher within the research project that (University of ???) values so highly.
+
+My CV, statement of teaching philosophy, description of research interests and goals, and statement on inclusive teaching and mentoring are enclosed, along with unofficial transcripts and contact information for three references. I would welcome the opportunity to discuss how my research and teaching can contribute to the Department of Biology at University of ????. Thank you for your consideration.
+
+\closing{Sincerely,}
+
+% ========== ANEXOS ==========
+%\encl{CV \\
+%Research Interests and Goals \\
+%Teaching Philosophy \\
+%Inclusive Teaching and Mentoring Statement \\
+%Contact Information for Three References}
+
+\end{letter}
+
+\end{document}
