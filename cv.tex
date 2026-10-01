@@ -1,14 +1,347 @@
-% cv.tex – borrador de CV en LaTeX
-\section*{Curriculum Vitae}
-\begin{itemize}[leftmargin=*]
-  \item \textbf{Nombre}: [Su nombre]
-  \item \textbf{Posición actual}: Postdoctoral researcher, [Institución]
-  \item \textbf{Educación}:
-    \begin{itemize}
-      \item Ph.D. in Evolutionary Biology, Arizona State University, 2024
-      \item M.Sc. in Physics, Universidad Veracruz, 2019
-    \end{itemize}
-  \item \textbf{Investigación}: Modelado cuantitativo de procesos ecológicos y evolutivos, integración de genética poblacional, filogenética y ecología del movimiento.
-  \item \textbf{Publicaciones}: (lista breve)
-  \item \textbf{Docencia}: (cursos impartidos)
+\documentclass[11pt,a4paper]{article}
+
+% =====================================================================
+%  CV — Ángel Luis Robles Fernández
+%  Draft v0.1 — August 2026
+%  Source of truth: CV/cv.md (markdown), rendered to .tex via Pandoc
+%  Compile with: pdflatex CV_ALRF.tex  (run twice for refs)
+% =====================================================================
+
+% --- Packages ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=0.85in]{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!60!black,
+  urlcolor=blue!60!black,
+  citecolor=blue!60!black
+}
+
+% --- Section formatting ---
+\titleformat{\section}{\Large\bfseries\color{black}}{}{0em}{}
+\titleformat{\subsection}{\large\bfseries}{}{0em}{}
+\titlespacing*{\section}{0pt}{1.2em}{0.3em}
+\titlespacing*{\subsection}{0pt}{0.8em}{0.2em}
+
+\setlist[itemize]{leftmargin=1.4em,itemsep=0.15em,topsep=0.2em}
+\setlist[enumerate]{leftmargin=1.4em,itemsep=0.15em,topsep=0.2em}
+
+% --- Header / footer ---
+\pagestyle{empty}
+
+% --- Custom commands ---
+\newcommand{\pub}[3]{\item \textbf{#1} (#2). \textit{#3}.}
+\newcommand{\firstpub}[3]{\item $\ast$ \textbf{#1} (#2). \textit{#3}.}
+
+\begin{document}
+
+% =====================================================================
+%  Header
+% =====================================================================
+\begin{center}
+  {\Huge\bfseries Ángel Luis Robles Fernández}\\[0.3em]
+  \rule{0.5\linewidth}{0.4pt}\\[0.6em]
+  {\large Postdoctoral Researcher}\\
+  Kansas Biological Survey \& Center for Ecological Research\\
+  University of Kansas, Lawrence, KS 66047\\[0.4em]
+  {\small
+  \href{mailto:a.l.robles.fernandez@gmail.com}{a.l.robles.fernandez@gmail.com} $\cdot$
+  \href{https://alrobles.github.io}{alrobles.github.io} $\cdot$
+  ORCID \href{https://orcid.org/0000-0002-4674-4270}{0000-0002-4674-4270} $\cdot$
+  GitHub \href{https://github.com/alrobles}{github.com/alrobles}}
+\end{center}
+
+\vspace{0.5em}
+
+% =====================================================================
+%  Education
+% =====================================================================
+\section*{Education}
+
+\begin{itemize}[leftmargin=0pt]
+\item \textbf{2021 -- 2025} \quad \textbf{PhD in Evolutionary Biology}, Arizona State University, School of Life Sciences\\
+      Dissertation: \textit{Predicting host--parasite interactions from different biodiversity dimensions through machine learning}\\
+      Committee: Nathan Upham (Co-Chair), Nico Franz (Co-Chair), Beckett Sterner, Taichi Suzuki
+
+\item \textbf{2020 -- 2021} \quad \textbf{MSc in Physics}, Universidad Veracruzana, Faculty of Physics, Mexico
+
+\item \textbf{2017} \quad \textbf{BSc in Physics}, Universidad Veracruzana, Faculty of Physics, Mexico
+
+\item \textbf{2011} \quad \textbf{BA in Music (Piano)}, Universidad Veracruzana, Faculty of Arts, Mexico
 \end{itemize}
+
+% =====================================================================
+%  Professional Experience
+% =====================================================================
+\section*{Professional Experience}
+
+\begin{itemize}[leftmargin=0pt]
+\item \textbf{Sep 2024 -- Present} \quad \textbf{Postdoctoral Researcher}, University of Kansas\\
+      Kansas Biological Survey \& Center for Ecological Research \textbar{} Supervisor: Daniel C. Reuman
+  \begin{itemize}
+    \item Lead developer of \textbf{XSDM}, a demographic species distribution model coupling stochastic population dynamics with climate variability time series (Berti, Robles-Fernández et al., 2026, \textit{bioRxiv}). Key result: climate variability reduces species' potential distributions by 22--45\%, comparable to the effect of changes in climate means.
+    \item Creator and maintainer of the \texttt{xsdm} R package (CRAN v1.0.2; C++/RcppParallel backend).
+    \item Co-developing the theoretical framework for ancestral reconstruction of fundamental niches as evolving ellipsoids under Brownian Motion and Ornstein--Uhlenbeck processes; empirical tests across six mammal clades.
+    \item Phylogenetic inference in protein embedding space: ancestral reconstruction of mean-pooled protein language model embeddings under BM/OU with full Bayesian uncertainty quantification (Stan).
+    \item Computational environment: Linux HPC (SLURM), DuckDB for large spatial datasets, Stan for Bayesian calibration, R / C++17 / Python.
+  \end{itemize}
+
+\item \textbf{Aug 2021 -- Jul 2025} \quad \textbf{Research Assistant}, Arizona State University, School of Life Sciences
+  \begin{itemize}
+    \item Machine learning frameworks for predicting host--parasite interactions from phylogenetic, environmental, and geographic distances. Published in PNAS (2022), Frontiers in Veterinary Science (2021), and Parasitology (2025).
+    \item Developed the \textbf{Suitability Prevalence Area (SPA)} method linking Quaternary environmental stability to present-day population genetic diversity (Hernández, Robles-Fernández \& Upham, 2025, \textit{Ecography}; co-first author).
+    \item Developed \textbf{LACS}, a positive-unlabeled learning framework for automated extraction of host--parasite records from biomedical literature (PhD thesis chapter). This project was awared with the second prize in the GBIF Ebbe Nielsen Challenge in 2022.
+    \item Taxonomic harmonization of global mammal and parasite databases (\texttt{mddmaps}, and \texttt{cofid} R packages).
+  \end{itemize}
+
+\item \textbf{Feb 2020 -- Dec 2021} \quad \textbf{CONACYT Research Fellow}, Universidad Veracruzana, Faculty of Physics, Mexico
+  \begin{itemize}
+    \item Modeling host -- parasites interactions using environmental, geographic, and phylogenetic information through machine learning. (CONACYT doctoral fellowship.)
+  \end{itemize}
+\item \textbf{Feb 2018 -- Feb 2020} \quad  \textbf{Senior Automation Analyst}, Tenaris Tamsa, Veracruz, Mexico
+  \begin{itemize}
+    \item Machine learning for industrial process optimization. Statistical modeling, natural language processing, relational and non-relational databases, BI dashboards, KPI monitoring, predictive model deployment.
+  \end{itemize}
+\end{itemize}
+
+% =====================================================================
+%  Peer-Reviewed Publications
+% =====================================================================
+\section*{Peer-Reviewed Publications}
+
+\textit{First and co-first author publications marked with $\ast$; citation counts via Crossref (2026-08-28).}
+
+\begin{enumerate}[leftmargin=0pt]
+\firstpub{Hernández, N.A.H. $\ast$, Robles-Fernández, Á.L. $\ast$, \& Upham, N.}{2025}{Environmental suitability throughout the late Quaternary explains population genetic diversity. \textit{Ecography}, 2025(3), e07202. \textit{Equal contribution. [5 citations]}}
+
+\firstpub{Robles-Fernández, Á.L., Santiago-Alarcon, D., \& Lira-Noriega, A.}{2022}{Wildlife susceptibility to infectious diseases at global scales. \textit{Proceedings of the National Academy of Sciences}, 119(35), e2122851119. [19 citations]}
+
+\firstpub{Robles-Fernández, Á.L., Santiago-Alarcon, D., \& Lira-Noriega, A.}{2021}{American mammals susceptibility to dengue according to geographical, environmental, and phylogenetic distances. \textit{Frontiers in Veterinary Science}, 8, 604560. [11 citations]}
+
+\firstpub{Robles-Fernández, Á.L. \& Lira-Noriega, A.}{2017}{Combining phylogenetic and occurrence information for risk assessment of pest and pathogen interactions with host plants. \textit{Frontiers in Applied Mathematics and Statistics}, 3, 17. [17 citations]}
+
+\item Krasnov, B.R., Grabovsky, V.I., Korallo-Vinarskaya, N., Vinarski, M.V., Robles-Fernández, Á.L., \& Khokhlova, I. (2025). Geographic variation in the determinants of ectoparasite faunas' species richness. \textit{Parasitology}, 152(7), 745--756.
+
+\item Tinoco-Domínguez, E., Amancio, G., Robles-Fernández, Á.L., \& Lira-Noriega, A. (2025). Interaction network of \textit{Phoradendron} and its hosts and the influence of phylogenetic, geographic, and environmental factors on the probability of interaction. \textit{American Journal of Botany}, 112(4), e70025.
+
+\item Velásquez-Roa, T., Hurtado-Materon, M.A., Robles-Fernández, Á.L., \& Castro-Arellano, I. (2026). Rosario: An algorithm to analyse cyclical data in ecology. \textit{Biodiversity Data Journal}, 14, e176358.
+\end{enumerate}
+
+\subsection*{In preparation / Preprint}
+
+\begin{enumerate}[leftmargin=0pt,start=8]
+\firstpub{Robles-Fernández, Á.L. \& Morales-Serna, F.N.}{2026}{Predicting host--parasite interactions from phylogenetic distance with positive--unlabeled learning: a validated, presence-only framework. \textit{Manuscript}.}
+
+\firstpub{Robles-Fernández, Á.L. \& Soberón, J.}{2026}{On the ancestral reconstruction of the fundamental niche. \textit{Manuscript}.}
+
+\firstpub{Robles-Fernández, Á.L. \& Secaira-Morocho, H.}{2026}{Phylogenetic reconstruction of ancestral protein embeddings. \textit{Manuscript}.}
+
+\firstpub{Robles-Fernández, Á.L. \& Secaira-Morocho, H.}{2026}{Phylogenetic reconstruction of ancestral protein embeddings. \textit{Manuscript}.}
+
+\item Berti, E., Robles-Fernández, Á.L., Rosenbaum, B., Peterson, T.A., Soberón, J., \& Reuman, D.C. (2026). The impacts of climate variability on the niche concept and distributions of species. \textit{bioRxiv}. \url{https://doi.org/10.1101/2024.10.30.621023} 
+\end{enumerate}
+
+\textbf{Summary:} 7 published peer-reviewed papers; 4 manuscripts in preparation. 4 first/co-first author publications. h-index $\approx$ 4; 55+ total citations.
+
+% =====================================================================
+%  Software & Open-Source Contributions
+% =====================================================================
+\section*{Services}
+\begin{itemize}
+
+\item
+  \textbf{Peer reviewer} for: Ecology and evolution, PeerJ, Ecology Letters (Co-review), Molecular Phylogenetics and Evolution
+\end{itemize}
+
+
+
+
+\section*{Software \& Open-Source Contributions}
+
+Creator/maintainer of 10 R/C++ packages and 3 production web services. All open-source and publicly available.
+
+\subsection*{Production Web Services}
+
+\noindent\begin{tabularx}{\linewidth}{@{}p{2.2cm}p{4.8cm}X@{}}
+\toprule
+\textbf{Service} & \textbf{URL} & \textbf{Description} \\
+\midrule
+EcoSeek & \url{https://ecoseek.org} & Scientific agent environment for ecology. $\sim$187{,}000 requests/month via Cloudflare (2026). \\
+EcoSeek Kids & \url{https://kids.ecoseek.org} & Kid-friendly ecology study assistant. \\
+xbioclim & \url{https://xbioclim.org} & Time series of bioclimatic variables (BIO01--BIO19, from  1950 to 2025 computed from ERA5-Land Dataset). \\
+\bottomrule
+\end{tabularx}
+
+\subsection*{R Packages (Creator \& Maintainer)}
+
+\noindent\begin{tabularx}{\linewidth}{@{}p{2.4cm}p{1.8cm}X@{}}
+\toprule
+\textbf{Package} & \textbf{CRAN} & \textbf{Description} \\
+\midrule
+\texttt{xsdm} & v1.0.2 & Demographic species distribution model with stochastic demography + climate variability. RcppParallel backend. \\
+\texttt{maxentcpp} & v1.0.0 & Maxent SDM in C++ (MIT license). \\
+\texttt{ucminfcpp} & v1.0.0 & C++17 reimplementation of UCMINF unconstrained optimizer. \\
+\texttt{sobol} & v1.0.0 & Quasi-Monte Carlo Sobol sequence generator (Rcpp). \\
+\texttt{rosario} & v0.1.1 & Null-model algorithm for cyclical ecological data. \\
+\texttt{cofid} & v1.0.0 & Copepod--fish interaction database. \\
+\texttt{phylopred} & v1.0.1 & Modeling host parasite interactions through PU-learning. \\
+\texttt{xplus} & -- & Extended positive--unlabeled learning. \\
+\texttt{xnicher} & -- & Niche modeling via multivariate ellipses and Non-Central Skew-T distribution. \\
+\texttt{poweRcpp} & -- & High-performance power-law distribution fitting. \\
+\texttt{xbioclim} & -- & High performance computation of the Bioclimatic variables with C++/CUDA/xtensor/GDAL backend \\
+\bottomrule
+\end{tabularx}
+
+\subsection*{Additional Projects}
+
+\textbf{rsofuncpp} (C++17 port of SOFUN terrestrial ecosystem model with OpenMP and Stan calibration), \textbf{geotax} (project probability of share parasites between host to geographic space), \textbf{fastJaccard} (High-Efficiency Parallel Jaccard Similarity Computation Using RcppParallel), \textbf{gbifliterature} (GBIF Literature API client).
+
+\textbf{Adoption metrics (2025-08 to 2026-08):} $\sim$8{,}700 cumulative CRAN downloads across 6 published packages; $\sim$2{,}500 unique cloners across 10 GitHub repos (14-day window); $\sim$187k requests/month on ecoseek.org.
+
+% =====================================================================
+%  Honors and Awards
+% =====================================================================
+\section*{Honors and Awards}
+
+\noindent\begin{tabularx}{\linewidth}{@{}p{1.6cm}p{4.2cm}X r@{}}
+\toprule
+\textbf{Date} & \textbf{Award} & \textbf{Description} & \textbf{Amount} \\
+\midrule
+10/2022 & GBIF Ebbe Nielsen Challenge & 2nd Prize (LACS: Literature Abstract Classification System) & \$5{,}000 \\
+05/2023 & American Society of Mammalogists & Grant-in-Aid of Research & \$1{,}750 \\
+03/2022 & Organization of American States & Leo S. Rowe Fund Program Beneficiary & \$15{,}000 \\
+10/2020 & GBIF & Young Researcher Award & \$5{,}000 \\
+05/2016 & COVEICYDET, Mexico & 5th Young Talent Award & \$1{,}500 \\
+11/2016 & Universidad Veracruzana & Encouragement to Academic and Artistic Recognition & \$250 \\
+\bottomrule
+\end{tabularx}
+
+\textbf{Total external funding as PI/co-PI: \$28{,}500.}
+
+% =====================================================================
+%  Fellowships
+% =====================================================================
+\section*{Fellowships}
+
+\noindent\begin{tabularx}{\linewidth}{@{}p{4cm}p{6cm}X@{}}
+\toprule
+\textbf{Period} & \textbf{Fellowship} & \textbf{Institution} \\
+\midrule
+Feb 2020 -- Dec 2021 & CONACYT Doctoral Fellowship & Universidad Veracruzana, Faculty of Physics, Mexico \\
+\bottomrule
+\end{tabularx}
+
+% =====================================================================
+%  Teaching Experience
+% =====================================================================
+\section*{Teaching Experience}
+
+\begin{itemize}[leftmargin=0pt]
+\item \textbf{Instructor}: Introduction to R (Summer 2017), Faculty of Physics, Universidad Veracruzana
+\item \textbf{Teaching Assistant}: Quantitative Ecology (Spring 2024), Statistical Models for Biology (Summer 2024), Arizona State University
+\item \textbf{Certification}: RStudio Certified Trainer -- Tidyverse
+\end{itemize}
+
+\textbf{Courses prepared to teach:} Ecology, Evolution, Global Change Biology, Introductory Biology, Quantitative Ecology, Statistical Models for Biology, Biogeography, R for Biologists.
+
+% =====================================================================
+%  Service
+% =====================================================================
+%\section*{Service}
+
+%\begin{itemize}[leftmargin=0pt]
+%\item \textbf{Peer reviewer} for: Ecography, Global Ecology and Biogeography, Diversity and Distributions, Frontiers in Ecology and Evolution, Journal of Biogeography, Parasitology
+%\item \textbf{Ebbe Nielsen Challenge} selection committee, GBIF (2023)
+%\end{itemize}
+
+% =====================================================================
+%  International Conferences
+% =====================================================================
+%\section*{International Conferences --- Oral Presentations}
+
+%\begin{itemize}[leftmargin=0pt]
+%\item \textbf{2024} -- 11th Biennial Conference of the International Biogeography Society, Prague, Czech Republic
+%\item \textbf{2022} -- 101st Annual Meeting of the American Society of Mammalogists
+%\item \textbf{2022} -- 10th Biennial Conference of the International Biogeography Society, Vancouver, Canada
+%\item \textbf{2020} -- International Conference on Complex Systems, NECSI
+%\item \textbf{2017} -- 8th Biennial Conference of the International Biogeography Society, Tucson, AZ
+%\end{itemize}
+
+%\subsection*{Departmental \& Invited Seminars}
+
+%\begin{itemize}[leftmargin=0pt]
+%\item \textbf{2026} -- \textbf{Integrative Eco-Evolutionary Forecasting}, German Centre for Integrative Biodiversity Research (iDiv), Leipzig, Germany. \textit{February 11, 2026}. Three-axis research program linking eco-evolutionary patterns with population processes: (1) ML/network pipeline predicting host--parasite interactions and multihost susceptibility (dengue, avian malaria, West Nile virus) from phylogenetic, geographic, and environmental distances; (2) Suitability Prevalence Area (SPA)---a time-averaged stability metric explaining spatial genetic differentiation and identifying diversity-and-risk hotspots; (3) XSDM, an extended SDM that embeds stochastic demography and uses the long-term stochastic growth rate as suitability, translating interannual climate variability into uncertainty-aware range forecasts.
+
+%\item \textbf{2025} -- \textbf{Ecointeraction: A machine learning framework to predict host--parasite interactions through ecological and evolutionary covariates}, Ecology Seminar, Kansas Biological Survey, University of Kansas, Lawrence, Kansas. \textit{October 24, 2025}. Presented the Ecointeraction PhD-thesis framework: (1) automation of host--parasite data extraction from published literature and open databases; (2) theoretical framework relating genetic diversity to environmental suitability through the SPA method; (3) ML framework for predicting host--parasite interactions from ecological and evolutionary covariates. Final products: assessment tools, predicted pathogen interaction networks, model interpretations (variable importance, partial dependence plots). Open host--parasite knowledge to support zoonotic disease research.
+%\end{itemize}
+
+
+\section*{Invited Talks \& Presentations}
+
+\begin{itemize}[leftmargin=0pt]
+\item \textbf{2026} -- \textit{Integrative Eco-Evolutionary Forecasting}. German Centre for Integrative Biodiversity Research (iDiv), Leipzig, Germany. Feb 11, 2026.
+\item \textbf{2025} -- \textit{Ecointeraction: A machine learning framework to predict host--parasite interactions}. Ecology Seminar, Kansas Biological Survey, University of Kansas, Lawrence, KS. Oct 24, 2025.
+\item \textbf{2024} -- 11th Biennial Conf.\ Intl.\ Biogeography Society, Prague, Czech Republic.
+\item \textbf{2022} -- 101st Annual Meeting, American Society of Mammalogists.
+\item \textbf{2022} -- 10th Biennial Conf.\ Intl.\ Biogeography Society, Vancouver, Canada.
+\item \textbf{2017} -- 8th Biennial Conf.\ Intl.\ Biogeography Society, Tucson, AZ.
+\end{itemize}
+
+%\subsection*{Applications \& Web Tools}
+
+%\begin{itemize}[leftmargin=0pt]
+%\item \textbf{mammals\_virus\_text\_class} -- Mammal--parasite paper recommender %(Shiny app)
+%\item \textbf{abstractsHostParasites} -- Text classification for host--parasite abstracts using PU learning
+%\item \textbf{LACS} (GBIF Literature Abstract Classification System) -- Ebbe Nielsen Challenge 2022, 2nd Prize (\url{https://gbif.lacs.info/})
+%\end{itemize}
+
+% =====================================================================
+%  Technical Skills
+% =====================================================================
+\section*{Technical Skills}
+
+\textbf{Programming:} R (expert), Shell (advanced), C++17 (advanced), Python (advance), Python (intermediate), SQL (intermediate), Stan (intermediate), 
+Fortran (reading/modification)\\
+\textbf{HPC \& Data:} SLURM, DuckDB, Apache Spark, Linux (CentOS, Debian, Ubuntu), Apptainer \\
+\textbf{Methods:} Machine learning (tidymodels framework, Supervised Learning, Unsupervised Learning, Possitive and Unlabel learning, Self Supervised Learning), ecological niche modeling (Maxent, XSDM, xnicher), Bayesian inference (Stan), phylogenetic comparative methods, network analysis\\
+\textbf{Data Engineering:} DuckDB, Apache Spark, Apache Hadoop, PostgreSQL, Big Data infrastructure. \\
+\textbf{Languages:} Spanish (native), English (professional fluency)
+
+% =====================================================================
+%  References
+% =====================================================================
+\section*{References}
+
+\begin{enumerate}[leftmargin=0pt]
+\item \textbf{Daniel C. Reuman} -- Postdoctoral Supervisor \\
+      Professor, Department of Ecology and Evolutionary Biology \\
+      University of Kansas \\
+      \href{mailto:reuman@ku.edu}{reuman@ku.edu}
+
+\item \textbf{Jorge Soberon} \\
+      University Distinguished Professor \\
+      The University of Kansas \\
+      \href{mailto:jsoberon@ku.edu}{jsoberon@ku.edu}
+
+\item \textbf{Diego Santiago-Alarcon}  \\
+      Associate Professor\\
+      University of South Florida \\
+      \href{mailto:santiagoalarcon@usf.edu}{santiagoalarcon@usf.edu}
+\end{enumerate}
+
+\vfill
+\noindent\rule{\linewidth}{0.4pt}\\
+\textit{Last updated: August 2026}
+
+\end{document}
