@@ -1,0 +1,100 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[margin=0.58in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{multicol}
+\hypersetup{colorlinks=true,linkcolor=blue!60!black,urlcolor=blue!60!black}
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\vspace{0.1em}\hrule]
+\titlespacing*{\section}{0pt}{0.55em}{0.18em}
+\setlist[itemize]{leftmargin=1.15em,itemsep=0.05em,topsep=0.08em,parsep=0pt}
+\pagestyle{empty}
+\newcommand{\cvitem}[2]{\textbf{#1}\hfill #2\\}
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Ángel Luis Robles Fernández}\\[-0.1em]
+\textbf{Postdoctoral Researcher, University of Kansas}\\
+Kansas Biological Survey \& Center for Ecological Research\\[-0.1em]
+\href{mailto:a.l.robles.fernandez@gmail.com}{a.l.robles.fernandez@gmail.com}
+\enspace|\enspace
+\href{https://alrobles.github.io}{alrobles.github.io}
+\enspace|\enspace
+\href{https://orcid.org/0000-0002-4674-4270}{ORCID 0000-0002-4674-4270}
+\end{center}
+
+\section*{Research profile}
+Quantitative evolutionary biologist developing demographic species distribution models, machine-learning methods, and open scientific software. My research connects organismal performance, climate variability, species interactions, and population persistence through reproducible computation.
+
+\section*{Education}
+\cvitem{Ph.D., Evolutionary Biology}{2025}
+Arizona State University, School of Life Sciences. Dissertation: \emph{Predicting host--parasite interactions from different biodiversity dimensions through machine learning}.
+\cvitem{M.Sc., Physics}{2021}
+Universidad Veracruzana, Faculty of Physics, Mexico.
+\cvitem{B.Sc., Physics}{2017}
+Universidad Veracruzana, Faculty of Physics, Mexico.
+
+\section*{Academic and professional experience}
+\cvitem{Postdoctoral Researcher, University of Kansas}{Sep 2024--present}
+Supervisor: Daniel C. Reuman. Co-developer of XSDM, a demographic SDM coupling stochastic population dynamics with climate variability; creator and maintainer of the \texttt{xsdm} R package; developer of Bayesian XSDM methods.
+\cvitem{Research Assistant, Arizona State University}{Aug 2021--Jul 2025}
+Machine-learning frameworks for host--pathogen interactions; co-first-author SPA method linking environmental stability with population genetic diversity; developer of LACS positive--unlabeled literature classification.
+\cvitem{Senior Automation Analyst, Tenaris Tamsa}{Feb 2018--Feb 2020}
+Machine learning, statistical modeling, databases, dashboards, and industrial process optimization.
+
+\section*{Selected publications}
+\begin{enumerate}[leftmargin=1.25em,label={}]
+\item[*] Hernández, N.A.H., Robles-Fernández, Á.L., \& Upham, N. (2025). Environmental suitability throughout the late Quaternary explains population genetic diversity. \emph{Ecography}, e07202. Equal contribution.
+\item[*] Robles-Fernández, Á.L., Santiago-Alarcon, D., \& Lira-Noriega, A. (2022). Wildlife susceptibility to infectious diseases at global scales. \emph{PNAS}, 119, e2122851119.
+\item[*] Robles-Fernández, Á.L., Santiago-Alarcon, D., \& Lira-Noriega, A. (2021). American mammals susceptibility to dengue according to geographical, environmental, and phylogenetic distances. \emph{Frontiers in Veterinary Science}, 8, 604560.
+\item[*] Robles-Fernández, Á.L. \& Lira-Noriega, A. (2017). Combining phylogenetic and occurrence information for risk assessment of pest and pathogen interactions with host plants. \emph{Frontiers in Applied Mathematics and Statistics}, 3, 17.
+\item Berti, E., Robles-Fernández, Á.L., Rosenbaum, B., Peterson, T.A., Soberón, J., \& Reuman, D.C. (2026). The impacts of climate variability on the niche concept and distributions of species. \emph{bioRxiv}. \href{https://doi.org/10.1101/2024.10.30.621023}{doi}.
+\item Krasnov, B.R. et al. (2025). Geographic variation in the determinants of ectoparasite faunas' species richness. \emph{Parasitology}, 152, 745--756.
+\end{enumerate}
+
+\section*{Research software and data infrastructure}
+\begin{itemize}
+\item \textbf{XSDM / \texttt{xsdm}:} stochastic-demography SDM with climate variability; R/C++ and RcppParallel.
+\item \textbf{EcoSeek, Genominer, xbioclim, litreview, Sciev:} open web services and workflows for ecological data, population-genetic resources, climate time series, literature synthesis, and structured scientific decisions.
+\item \textbf{Other packages:} \texttt{maxentcpp}, \texttt{phylopred}, \texttt{xnicher}, \texttt{rosario}, \texttt{cofid}, \texttt{geotax}, and related R/C++ tools.
+\item \textbf{In development:} \texttt{arfun}, with Jorge Soberón, for ancestral niche reconstruction; \texttt{ancemb} for Bayesian ancestral protein-embedding reconstruction.
+\end{itemize}
+
+\section*{Teaching, mentoring, and awards}
+\begin{itemize}
+\item Instructor: Introduction to R; teaching assistant: Quantitative Ecology and Statistical Models for Biology, Arizona State University.
+\item Invited instructor: graduate ecological niche modeling, INECOL. RStudio Certified Trainer, Tidyverse.
+\item \textbf{GBIF Ebbe Nielsen Challenge, 2022:} second prize for LACS. GBIF Young Researcher Award (2020); American Society of Mammalogists Grant-in-Aid (2023).
+\item Prepared to teach introductory biology, ecology, evolution, global change biology, quantitative ecology, biogeography, and R for biologists.
+\end{itemize}
+
+\section*{Methods and technical skills}
+\textbf{Programming:} R, C++17, Python, Shell, SQL, Stan \quad
+\textbf{Computing:} Linux, SLURM, DuckDB, Apache Spark, Apptainer\\
+\textbf{Methods:} machine learning, positive--unlabeled learning, Bayesian inference, SDMs, phylogenetic comparative methods, network analysis
+
+\section*{References}
+\begin{multicols}{3}
+\textbf{Daniel C. Reuman}\\
+University of Kansas\\
+\href{mailto:reuman@ku.edu}{reuman@ku.edu}
+
+\columnbreak
+\textbf{Jorge Soberón}\\
+University of Kansas\\
+\href{mailto:jsoberon@ku.edu}{jsoberon@ku.edu}
+
+\columnbreak
+\textbf{Diego Santiago-Alarcon}\\
+University of South Florida\\
+\href{mailto:santiagoalarcon@usf.edu}{santiagoalarcon@usf.edu}
+\end{multicols}
+
+\end{document}
