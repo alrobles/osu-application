@@ -1,0 +1,180 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{helvet}
+\usepackage{textcomp}
+\usepackage{parskip}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,urlcolor=blue,linkcolor=black]{hyperref}
+\renewcommand{\familydefault}{\sfdefault}
+\setlist[itemize]{leftmargin=1.3em,itemsep=1pt,topsep=2pt}
+\setlist[enumerate]{leftmargin=1.5em,itemsep=1pt,topsep=2pt}
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\vspace{0.1em}\hrule\vspace{0.2em}]
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setlength{\parindent}{0pt}\setlength{\parskip}{4pt}
+\begin{document}
+\section{Teaching Statement --- Ángel L.
+Robles-Fernández}\label{teaching-statement-uxe1ngel-l.-robles-fernuxe1ndez}
+
+\subsection*{Oregon State University--- Assistant Professor,
+Integrative
+Biology}\label{Oregon-state-university-assistant-professor-integrative-biology}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+I teach ecology from a quantitative perspective. My main motivation for teaching is to show students that ecology is not merely a descriptive discipline but a predictive one, and that acquiring skills in data management and analysis enables them to advance their research projects more robustly. My goal is not simply to impart knowledge, but to
+equip students with the computational and analytical tools they need to formulate and answer ecological questions independently. 
+I have developed this teaching philosophy through an unconventional path: a bachelor’s degree in physics, two years in the private sector developing machine learning systems, a return to academia to pursue a Ph. D. in evolutionary biology, and a postdoctoral fellowship focused on developing demographic models and high-performance computing. Throughout my career, I learned that the most valuable thing a teacher can offer a student is not a single piece of data, but a toolbox of methods. My philosophy seeks to foster reproducibility by transforming data into knowledge.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection*{Teaching philosophy: Computation as a bridge between theory
+and
+practice}\label{teaching-philosophy-computation-as-a-bridge-between-theory-and-practice}
+
+Ecology students often encounter a gap between the conceptual richness
+of their courses and the practical skills demanded by research and
+employment. My teaching bridges this gap by embedding computation into every course I teach --- not as an
+add-on, but as the primary mode of inquiry.
+
+I apply three principles in the classroom:
+
+\textbf{1. Learn by building.} In the Niche Modeling course, students did not read about species distribution models; they built one, from downloading occurrence data from GBIF to producing a projected range map. Each step was a small, debuggable task:
+clean the coordinates, extract climate values, fit the model, assess its performance, and visualize the results. By the end of the course, each student had a project that answered an ecological and evolutionary question with the pipeline they learned and developed along the course and won the confidence to apply it to their own
+research.
+
+\textbf{2. Data before theory, theory before jargon.} I introduce
+concepts through data exploration before naming them. Before defining
+Simpson's diversity index, students plot rank-abundance curves for real
+communities and notice that some are steeper than others. The index
+becomes the answer to a question they already have. Jargon arrives last,
+as a label for something they already understand.
+
+\textbf{3. Real data, real learning.} Students in my courses use both toy and real datasets. In the Ecological Niche Model course, students analyzed subsets of my own published data --- mammal trait matrices,
+parasite occurrence records, climate time series. When a student's
+analysis conflicts with a published result, we treat it as a genuine
+scientific puzzle, not a grading error. This creates intellectual
+ownership: the student is not completing an assignment; they are
+contributing to the research.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection*{Courses I am prepared to
+teach}\label{courses-i-am-prepared-to-teach}
+
+The courses below illustrate my approach in depth. A complete set of
+syllabi --- including full 15-week versions for Global Change Ecology
+and Population Genetics \& Evolutionary Ecology, and intensive-format
+syllabi for Introduction to Data Science in R and Ecological Niche
+Modelling --- is included in my  \emph{website}.
+
+\subsubsection*{Global Change Ecology}\label{global-change-ecology-new-course-my-design}
+
+This course, which I have already developed as a complete 15-week
+syllabus, is built on the full ecological niche
+modeling (ENM/SDM) curriculum: students progress from niche theory
+(Grinnell to Chase \& Leibold) and the BAM framework, through the units
+of modeling and distribution-area concepts, to the retrieval and
+cleaning of occurrence and climate data, the calibration of core
+algorithms (xsdm, Maxent, xnicher), statistical validation (partial ROC, TSS, Boyce Index), and the projection of models under climate-change scenarios.
+Selected historical-biogeography concepts  frame how students
+interpret modern distributions. The course is built entirely on
+open-source software and public data --- including packages I have
+developed (\texttt{xnicher}, \texttt{maxentcpp}, \texttt{xbioclim},
+\texttt{xsdm}) and my live bioclimatic layers at
+\texttt{bioclim.ecoseek.org} --- eliminating cost barriers for students
+and the department. The final project (60\% of the grade) asks each
+student to calibrate, validate, and project a distribution model for a
+species of their choice and to report it in a short-communication style
+write-up; the best projects are publishable.
+
+\subsubsection*{Ecology}\label{ecology}
+
+I teach ecology as a hierarchical discipline: individuals \ensuremath{\rightarrow}  populations
+\ensuremath{\rightarrow}  communities \ensuremath{\rightarrow}  ecosystems \ensuremath{\rightarrow}  global. Each level introduces its own concepts (fitness, growth rate, diversity) and its own methods and tools (matrix models, null models, ordination). Labs combine data manipulation and analyses in R. Students learn how to manipulate data, but the emphasis is on what they do with it: fitting models, testing hypotheses, visualizing results. I emphasize that the same statistical tools (regression, randomization, model selection) appear at every level, giving students a coherent analytical toolkit rather than a disconnected set of methods.
+
+
+\subsubsection*{Introductory Biology
+(rotation)}\label{introductory-biology-rotation}
+
+I am very excited to teach introductory biology courses. My goal is to teach first-year undergraduate students strategies for formulating hypotheses and working with data and patterns. Students in my classes will be able to identify simple relationships in straightforward experiments, such as comparing leaf area and mass across different species. I am convinced that using computers to manipulate simple data, formulate questions, and understand key statistical principles in the era of generative artificial intelligence lowers the barrier to entry into research. This direct exposure to the scientific method will allow students to engage with their field of study and develop skills from the early stages of their academic training.
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection*{RStudio Certified Trainer and computational
+literacy}\label{rstudio-certified-trainer-and-computational-literacy}
+
+I am an RStudio Certified Trainer in the Tidyverse, a credential that
+reflects both my technical proficiency and my commitment to effective
+pedagogy for computational skills. This training taught me specific
+techniques that I apply in every course:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Live coding, not only slides.} I teach R by typing code in real time while students follow along on their own machines. Errors are pedagogical opportunities: when my code fails, we debug together,
+  modeling the real process of computational work. 
+  Coding by design transform vibe-coding and AI generative tools
+  in powerful coding skills.
+\item
+  \textbf{Minimal viable code first.} Students write a short scripts
+  that loads data and makes a plot before they learn about functions,
+  loops, or object types. Success comes early, motivation follows.
+\item
+  \textbf{Peer debugging.} When a code fails, the class learn how 
+  to fix it. In the era of AI generative tools, Design for failure 
+  phylosophy is the how to. Good practice in code are even needed
+  with coding agents. 
+\end{itemize}
+
+These techniques are effective regardless of students' prior programming
+experience. The scaffolded approach --- simple scripts first, complexity only when needed --- allowed all of them to produce a working SDM and functional R packages by semester's end.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection*{Mentoring and undergraduate
+research}\label{mentoring-and-undergraduate-research}
+
+I am seeking a position at Oregon State precisely because I want to
+mentor undergraduates and master's students in research. At an R1
+institution, undergraduates are often peripheral to the lab's mission;
+at App State, they are the mission. My research program is designed for
+this reality.
+
+A student joining my lab will follow a structured path:
+
+\textbf{Semester 1:} Learn R fundamentals and contribute to data
+processing (cleaning occurrence records, extracting climate data).
+Attend weekly lab meetings where we discuss papers and troubleshoot code
+together.
+
+\textbf{Semester 2:} Take ownership of a component of the research
+pipeline --- for example, running SDMs for a particular taxonomic group,
+or analyzing a timseries data from camera traps in the Nature Preserve.
+
+\textbf{Semester 3+:} Mentor newer students, develop independent
+projects branching from the lab's core questions, present at department
+seminars and conferences.
+
+This model is sustainable in the long term because the research is computational: a student with a laptop and basic knowledge of R already has everything they need. Furthermore, it is equitable: students who cannot afford unpaid summer internships or expensive field courses can participate from day one.
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection*{Teaching as a long-term
+practice}\label{teaching-as-a-long-term-practice}
+
+I do not view teaching as an obligation imposed on me in exchange for time to conduct my own research. I believe it is very important to integrate teaching with my research because I have seen, both as a student and as a professional in the field, that the most significant work in the scientific realm also takes place in the classroom. Students who learn to model species distribution in my Global Change Ecology course develop skills not only for research but also for working at a conservation NGO or a public health agency, or for pursuing graduate studies. Each of these paths is just as important as another publication on my record. 
+
+While my formal teaching experience is early-career, the breadth and depth of my prepared course materials, built around my own open-source software and a documented credential in computational pedagogy, demonstrate a sustained commitment to teaching as a primary part of my professional identity, not an afterthought to research.
+
+At Oregon State University, I will complement my research work with teaching, in addition to mentoring students in their research, and I will continue to develop open-source educational materials related to my software packages. I will contribute to the development of the curriculum for the Integrative Biology major and serve on departmental committees. I am looking to establish myself in an academic community where I can refine my courses over the years and create a lab culture that endures beyond a single semester.
+
+\end{document}

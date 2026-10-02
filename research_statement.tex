@@ -1,0 +1,211 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{helvet}
+\usepackage{textcomp}
+\usepackage{parskip}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,urlcolor=blue,linkcolor=black]{hyperref}
+\renewcommand{\familydefault}{\sfdefault}
+\setlist[itemize]{leftmargin=1.3em,itemsep=1pt,topsep=2pt}
+\setlist[enumerate]{leftmargin=1.5em,itemsep=1pt,topsep=2pt}
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\vspace{0.1em}\hrule\vspace{0.2em}]
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setlength{\parindent}{0pt}\setlength{\parskip}{4pt}
+\begin{document}
+\section{Research Statement --- Ángel L.
+Robles-Fernández}\label{research-statement-uxe1ngel-l.-robles-fernuxe1ndez}
+
+\subsection*{Oregon State University --- Assistant Professor,
+Integrative
+Biology}\label{oregon-state-university-assistant-professor-integrative-biology}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+My research program addresses a straightforward question: \emph{Can we predict which species will interact and where?} Answering this question requires integrating three dimensions of biodiversity: genomic and  phylogenetic information, environmental information, and species distribution modeling. My research seeks to integrate this information with computational methods by bringing together large volumes of data in open databases. My work has progressed along two complementary lines: first, the development of machine learning frameworks to predict interactions between hosts and pathogens on a continental and global scale; and, second, the creation of demographic models of species distribution that account for climate variability—a factor ignored by traditional approaches despite its proven importance for population viability.
+
+At Oregon State University, I will bring these themes together in a research program that can be integrated with the mentoring of students of anylevel, using open-source software tools and available open data to train students in computational ecology, while also producing publishable scientific results.
+
+\subsection*{Arc 1: Predicting species interactions from biodiversity
+dimensions
+(2017--2022)}\label{arc-1-predicting-species-interactions-from-biodiversity-dimensions-20172022}
+
+The core insight driving my early work is that biotic interactions ---
+who parasitizes whom, which hosts share pathogens --- are not random.
+They are structured by evolutionary history, environmental overlap, and
+geographic proximity. My contribution has been to formalize this insight into predictive frameworks.
+
+My first paper on this topic (Robles-Fernández \& Lira-Noriega, 2017,
+\emph{Frontiers in Applied Mathematics and Statistics}) established the
+protocol: combine phylogenetic reconstructions of host plants with
+geographic occurrence data to estimate a pest-host interaction index in geographic space. This work demonstrated that pest-host interactions are constrained by host phylogeny and that these constraints can be
+projected onto maps to identify hotspots of vulnerability. The paper
+also introduced \texttt{geotax}, an R package that operationalizes this
+protocol for any pest-host system. We also have developed recently an updated protocol of this method base on PU learning, in a new R package called \texttt{phylopred}.
+
+Building on this framework, my next study (Robles-Fernández,
+Santiago-Alarcon \& Lira-Noriega, 2021, \emph{Frontiers in Veterinary
+Science}) applied machine learning to predict dengue susceptibility in
+wild mammals across the Americas as a function of phylogenetic,
+environmental, and geographic distances. We found that bats were
+predicted to be highly susceptible to DENV, consistent with field
+studies, and that temperature was a dominant factor determining
+transmission risk. Critically, we identified potential reservoir species
+that had not been previously considered.
+
+The generalizability of this approach became the focus of my
+dissertation work, published in \emph{PNAS} (Robles-Fernández,
+Santiago-Alarcon \& Lira-Noriega, 2022). Here, I tested the framework
+across three fundamentally different host-pathogen systems: directly
+transmitted coronaviruses in bats, and two vector-borne systems --- West
+Nile Virus and avian malaria in birds. I showed that reliable global
+susceptibility predictions could be obtained even when using less than
+20\% of incidence data, and that different systems were driven by
+different dimensions: coronavirus susceptibility was mostly geographic,
+WNV mostly phylogenetic, and avian malaria mostly environmental. This
+result has practical implications: it means that surveillance efforts
+must be tailored to the specific ecology of each pathogen system, and
+that a one-size-fits-all approach to disease forecasting will fail.
+
+Two subsequent collaborations extended this framework to new systems. In
+Krasnov et al.~(2025, \emph{Parasitology}), we analyzed determinants of
+ectoparasite species richness (fleas and gamasid mites) on small mammals
+across six biogeographic realms, finding that host trait similarity was
+the strongest predictor of parasite sharing --- stronger than phylogeny,
+geography, or environment. In Tinoco-Domínguez et al.~(2025,
+\emph{American Journal of Botany}), we applied network analysis to
+\emph{Phoradendron} mistletoes and their hosts, showing that the
+probability of interaction depends primarily on host phylogenetic
+distance. Across all these systems --- viruses, bacteria, ectoparasites,
+and parasitic plants --- the same principle holds: biodiversity
+dimensions structure biotic interactions, and this structure is
+predictable.
+
+\subsection*{Arc 2: Climate variability and species distributions
+(2022--present)}\label{arc-2-climate-variability-and-species-distributions-2022present}
+
+During my postdoctoral work in the Reuman Lab at the University of
+Kansas, my focus shifted from predicting \emph{who interacts with whom}
+to predicting \emph{where species can persist} under environmental
+change. The shift was motivated by a recognized gap: traditional species
+distribution models (SDMs) use long-term climate averages and ignore
+interannual variability, despite the fact that ecological demographers
+have long known that variability influences population viability.
+
+In Hernández, Robles-Fernández \& Upham (2024, \emph{Ecography}; equally
+contributing first authors), we addressed a related problem: how
+historical environmental suitability shapes present-day genetic
+diversity. We developed the Suitability Prevalence Area (SPA) method,
+which projects Grinnellian niches back through the Late Quaternary to
+identify areas of long-term environmental stability. Applying SPA to the
+tassel-eared squirrel (\emph{Sciurus aberti}), we showed that
+populations closer to the historical endemic area harbor higher genetic
+diversity and lower genetic differentiation --- a result that connects
+biogeographic history with population genomics and provides a predictive
+framework for conservation prioritization.
+
+The SPA work revealed that environmental \emph{stability} matters, but
+it did not address the complementary question: how does environmental
+\emph{variability} constrain distributions? To answer this, I
+co-developed \textbf{XSDM} (Berti, Robles-Fernández et al., 2026,
+\emph{bioRxiv}), a novel SDM framework that integrates stochastic
+demography into species distribution modeling. XSDM maximizes a
+likelihood function based on environmental time series and
+presence/absence records to reconstruct species' fundamental niches and
+project their potential geographic ranges. I am the creator and
+maintainer of the \texttt{xsdm} R package (CRAN-ready, C++ backend with
+RcppParallel), which implements this framework.
+
+Our key results: climate variability reduces species' potential
+distributions by an average of 22\%, and up to 45\% in some species.
+Moreover, the sensitivity of distributions to projected changes in
+climate \emph{variability} was comparable in magnitude to the
+sensitivity to changes in climate \emph{means}. This has profound
+implications: SDMs that ignore variability are systematically
+overestimating species' ranges under both current and future conditions.
+As global change alters not just mean temperatures but also the
+frequency of extreme events, XSDM provides a tool to correct these
+biases.
+
+\subsection*{Future research at Oregon State University: Integrating field
+ecology with global
+synthesis}\label{future-research-at-appalachian-state-integrating-field-ecology-with-global-synthesis}
+
+At Oregon State University, I will unify these two arcs into a research
+program organized around a central question: \textbf{how does climate
+variability reshape species interactions, and what are the consequences
+for disease emergence risk?}
+
+This program has three components, each designed to involve
+undergraduate and master's students at every stage.
+
+\subsubsection*{Component 1: Computational macroecology with public
+data}\label{component-1-computational-macroecology-with-public-data}
+
+My research program is based on publicly available data—GBIF records, GenBank sequences, xbioclim climate layers, and IUCN distribution maps—as well as my own mathematical and statistical models and the software I have already developed. For students at Appalachian State, this is an advantage. An undergraduate student with a laptop can learn basic R skills in my courses and how to download and handle occurrence records for North American mammals, extract climate data, and build a species distribution model using \texttt{xsdm} --- all within a single lab session. There is no barrier to entry. For their undergraduate thesis, students can expand this analysis to different clades or functional groups and conduct comparative studies—for example, by modeling different climate change scenarios and obtaining results that deepen our understanding of how climate variability affects species distribution. My line of research is global and computational in nature, making it infinitely scalable to accommodate undergraduate students' work.
+
+\subsubsection*{Component 2: Mechanistic modeling with
+XSDM}\label{component-2-mechanistic-modeling-with-xsdm}
+
+The XSDM framework is ideally suited for projecting how climate
+variability affects host-parasite systems. Traditional SDMs would model
+a host species' distribution based on average climate; XSDM can model it
+based on the full time series of climate variability, capturing the
+demographic consequences of extreme years. I will apply XSDM to host and
+vector species in the Southern Appalachians, projecting their
+distributions under CMIP6 climate scenarios. Students will learn to run
+SDMs, interpret output, and visualize uncertainty --- all using tools I
+have already built and documented.
+
+\subsubsection*{Component 3: Global synthesis of disease risk under
+climate
+change}\label{component-3-global-synthesis-of-disease-risk-under-climate-change}
+
+The third component scales back up to the global level, connecting my
+PNAS framework (predicting susceptibility from biodiversity dimensions)
+with my XSDM framework (projecting distributions under variability). I
+will ask: \emph{as climate variability increases, which regions will see
+the greatest reshuffling of host communities, and where will novel
+host-pathogen encounters become most likely?} This synthesis will use
+publicly available data from GBIF, xbioclim, and the IUCN
+database. All the data and software provided is accessible to undergraduates with basic programming skills. My developed R packages provide the computational infrastructure.
+
+\subsection*{Student involvement and publication
+strategy}\label{student-involvement-and-publication-strategy}
+
+A computational research program in disease ecology is uniquely suited
+for a primarily undergraduate institution. It requires no expensive
+wet-lab infrastructure, no animal care protocols beyond standard field
+methods, and no recurring consumable costs. Students can contribute from
+their first semester: a freshman can clean occurrence data in R while a
+senior runs XSDM projections for their capstone. I am committed to
+mentoring undergraduates as co-authors, and I will formalize this by
+establishing a lab structure where each student owns a component of the
+research pipeline from data-cleaning to analysis to manuscript.
+
+My target is 1--2 publications per year, with undergraduate and MS
+students as co-authors. The projects are modular: a single semester of
+trapping data can become a short communication in \emph{Biodiversity
+Data Journal}; a two-semester SDM project can become a full paper in
+\emph{Biodiversity informatics} or \emph{Diversity and Distributions}. I will pursue external funding through channels appropriate to my position --- including foundations, international and society-based schemes, and institutional internal support --- but the research program is designed to produce publishable results even without external grant support.
+
+
+\subsection*{Integration with teaching}\label{integration-with-teaching}
+
+This research program is integrated with my teaching curriculum. In Global Change Ecology, they will run XSDM projections and compare them to published SDM studies. In Evolution, they will learn the bases of phylogenetic comparative studies applied to host and parasite systems. Each course feeds directly into the research pipeline, and
+the research pipeline feeds back into course materials. 
+
+\subsection*{Summary}\label{summary}
+
+My research program is based on publicly available open-source software and datasets (nine packages in R/C++ and web services in production), seven peer-reviewed publications (with other manuscripts under review), and a clear, long-term research trajectory: from predicting who interacts with whom, to predicting where species may persist, to projecting how climate change will reshape both of these aspects. At Oregon State University, I will build this program into a student-centered research group that produces rigorous science while training the next generation of computational ecologists.
+\end{document}
